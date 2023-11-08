@@ -12,11 +12,17 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hello Paul"),
+        title: const Text("Product List"),
       ),
       body: SafeArea(
-        child: Center(
-          child: Text("hello"),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text("This is the title"),
+              leading: Image.network('https://topmobileinfo.com/images/products/xiaomi-civi-3-mobile-3858.png'),
+              trailing: Text("\$120"),
+            )
+          ],
         ),
       ),
     );
