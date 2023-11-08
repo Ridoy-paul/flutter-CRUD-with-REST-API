@@ -18,9 +18,31 @@ class _ProductListScreenState extends State<ProductListScreen> {
         child: Column(
           children: [
             ListTile(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text("Select Action"),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ListTile(
+                            title: const Text("Edit"),
+                            leading: const Icon(Icons.edit_calendar),
+                            onTap: () {},
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
               title: Text("This is the title"),
-              leading: Image.network('https://topmobileinfo.com/images/products/xiaomi-civi-3-mobile-3858.png'),
+              leading: Image.network(
+                  'https://topmobileinfo.com/images/products/xiaomi-civi-3-mobile-3858.png'),
               trailing: Text("\$120"),
+              subtitle: Text("hello"),
             )
           ],
         ),
