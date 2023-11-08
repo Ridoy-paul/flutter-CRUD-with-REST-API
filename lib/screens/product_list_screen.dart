@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '/screens/add_new_product_screen.dart';
 import '../widgets/product_item.dart';
@@ -12,6 +14,8 @@ class ProductListScreen extends StatefulWidget {
 
 class _ProductListScreenState extends State<ProductListScreen> {
 
+  List<Product> productList = [];
+
   @override
   void initState() {
     getProductList();
@@ -20,7 +24,22 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
   void getProductList() async {
      Response response = await  get(Uri.parse('https://crud.teamrabbil.com/api/v1/ReadProduct'),);
-     print(response.body);
+     if(response.statusCode == 200) {
+       final Map<String, dynamic> responseData =  jsonDecode(response.body);
+       if(responseData['status'] == 'success') {
+         for(Map<String, dynamic> productJson in responseData['data']) {
+           productList.add(Product(
+              id: productJson['_id'],
+              productName: productJson['ProductName'],
+              productCode: productJson['ProductCode'],
+              image: productJson['Img'],
+              unitPrice: productJson['UnitPrice'],
+              quantity: productJson['Qty'],
+              totalPrice: productJson['TotalPrice'],
+           ));
+        }
+       }
+     }
   }
 
   @override
@@ -59,9 +78,10 @@ class Product {
   final String productCode;
   final String image;
   final String unitPrice;
+  final String quantity;
   final String totalPrice;
 
-  Product({required this.id, required this.productName, required this.productCode, required this.image, required this.unitPrice, required this.totalPrice});
+  Product({required this.id, required this.productName, required this.productCode, required this.image, required this.unitPrice, required this.quantity, required this.totalPrice});
 
 
 }
