@@ -50,8 +50,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
       body: SafeArea(
         child: ListView.separated(
-          itemCount: 10,
+          itemCount: productList.length,
           itemBuilder: (context, index) {
+            //final productInfo = productList[index];
             return ProductItem();
           },
           separatorBuilder: (_, __) => const Divider(),
@@ -82,6 +83,5 @@ class Product {
   final String totalPrice;
 
   Product({required this.id, required this.productName, required this.productCode, required this.image, required this.unitPrice, required this.quantity, required this.totalPrice});
-
 
 }
