@@ -50,7 +50,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
       body: SafeArea(
         child: ListView.separated(
-          itemCount: productList.length,
+          itemCount: 10,
           itemBuilder: (context, index) {
             //final productInfo = productList[index];
             return ProductItem();
