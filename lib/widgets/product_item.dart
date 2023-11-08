@@ -16,7 +16,8 @@ class ProductItem extends StatelessWidget {
       },
       title: Text("This is the title"),
       leading: Image.network(
-          'https://topmobileinfo.com/images/products/xiaomi-civi-3-mobile-3858.png'),
+        'https://topmobileinfo.com/images/products/xiaomi-civi-3-mobile-3858.png',
+      ),
       trailing: Text("\$120"),
       subtitle: Text("hello"),
     );
