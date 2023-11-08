@@ -27,7 +27,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewProductScreen()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const AddNewProductScreen(),
+            ),
+          );
         },
         child: const Icon(Icons.add),
       ),
