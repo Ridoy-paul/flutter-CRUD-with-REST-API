@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud/screen/Product_create_screen.dart';
 
 void main() => runApp(CRUDApp());
 
@@ -9,7 +10,7 @@ class CRUDApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  HomePage(),
+      home:  ProductCreateScreen(),
     );
   }
 }

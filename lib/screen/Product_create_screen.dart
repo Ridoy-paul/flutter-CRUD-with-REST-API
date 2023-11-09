@@ -13,9 +13,16 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text("Create Product"),),
       body: SafeArea(
-        child: Column(
+        child: Stack(
           children: [
+            Container(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(20),
+                child: Column(
 
+                ),
+              ),
+            )
           ],
         ),
       ),
