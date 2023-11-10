@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/style/Style.dart';
 
+
 class ProductCreateScreen extends StatefulWidget {
   const ProductCreateScreen({super.key});
 
@@ -17,6 +18,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
       body: SafeArea(
         child: Stack(
           children: [
+            screenBackground(context),
             Container(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(20),

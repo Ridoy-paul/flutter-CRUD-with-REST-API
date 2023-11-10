@@ -1,2 +1,2 @@
 # Output
-![output](asset/images/module-11-output.png)
+![output](assets/images/module-11-output.png)
