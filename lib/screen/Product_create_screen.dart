@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud/style/Style.dart';
 
 class ProductCreateScreen extends StatefulWidget {
   const ProductCreateScreen({super.key});
@@ -19,7 +20,45 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(20),
                 child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: appInputDecorationStyle("Product Title"),
+                      onChanged: (value) {
 
+                      },
+                    ),
+                    const SizedBox(height: 10,),
+                    TextFormField(
+                      decoration: appInputDecorationStyle("Product code"),
+                      onChanged: (value) {
+
+                      },
+                    ),
+                    const SizedBox(height: 10,),
+                    TextFormField(
+                      decoration: appInputDecorationStyle("Product Image"),
+                      onChanged: (value) {
+
+                      },
+                    ),
+                    const SizedBox(height: 10,),
+                    TextFormField(
+                      decoration: appInputDecorationStyle("Product Unit Price"),
+                      onChanged: (value) {
+
+                      },
+                    ),
+                    const SizedBox(height: 10,),
+                    TextFormField(
+                      decoration: appInputDecorationStyle("Product Quantity"),
+                      onChanged: (value) {
+
+
+                      },
+                    ),
+
+
+                  ],
                 ),
               ),
             )
