@@ -44,8 +44,36 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
 
                       },
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      child: dropDownStyle(
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: DropdownButton(
+                            items: const [
+                              DropdownMenuItem(value: '', child:  Text("Select Quantity"),),
+                              DropdownMenuItem(value: '1', child:  Text("1 pcs"),),
+                              DropdownMenuItem(value: '2', child:  Text("2 pcs"),),
+                              DropdownMenuItem(value: '3', child:  Text("3 pcs"),),
+                              DropdownMenuItem(value: '4', child:  Text("4 pcs"),),
+                              DropdownMenuItem(value: '5', child:  Text("5 pcs"),),
+                              DropdownMenuItem(value: '6', child:  Text("6 pcs"),),
+                              DropdownMenuItem(value: '7', child:  Text("7 pcs"),),
+                              DropdownMenuItem(value: '8', child:  Text("8 pcs"),),
+                              DropdownMenuItem(value: '9', child:  Text("9 pcs"),),
+
+                            ],
+                            onChanged: (value) {},
+                          ),
+                        ),
+                      ),
+                    ),
                     const SizedBox(height: 10,),
                     TextFormField(
+                      keyboardType: TextInputType.number,
                       decoration: appInputDecorationStyle("Product Unit Price"),
                       onChanged: (value) {
 
@@ -53,7 +81,8 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                     ),
                     const SizedBox(height: 10,),
                     TextFormField(
-                      decoration: appInputDecorationStyle("Product Quantity"),
+                      keyboardType: TextInputType.number,
+                      decoration: appInputDecorationStyle("Product Total Price"),
                       onChanged: (value) {
 
 
