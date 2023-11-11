@@ -87,17 +87,13 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                     },
                   ),
                   const SizedBox(height: 10,),
-                  Container(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      style: buttonStyle(),
-                      onPressed: () {
+                  ElevatedButton(
+                    style: buttonStyle(),
+                    onPressed: () {
 
-                      },
-                      child: successButtonChild("Add Product"),
-                    ),
+                    },
+                    child: successButtonChild("Add Product"),
                   )
-
 
                 ],
               ),
