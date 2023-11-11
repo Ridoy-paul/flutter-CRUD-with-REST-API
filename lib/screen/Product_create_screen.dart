@@ -94,7 +94,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                       onPressed: () {
 
                       },
-                      child: const Text("Add Product"),
+                      child: successButtonChild("Add Product"),
                     ),
                   )
 

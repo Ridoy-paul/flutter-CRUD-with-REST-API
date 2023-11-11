@@ -69,3 +69,17 @@ ButtonStyle buttonStyle() {
     ),
   );
 }
+
+Ink successButtonChild(buttonText) {
+  return Ink(
+    decoration: BoxDecoration(
+      color: colorGreen,
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: Container(
+      height: 45,
+      alignment: Alignment.center,
+      child: Text(buttonText, style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15),),
+    ),
+  );
+}
