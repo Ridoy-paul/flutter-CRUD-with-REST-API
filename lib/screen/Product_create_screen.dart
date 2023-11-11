@@ -11,6 +11,29 @@ class ProductCreateScreen extends StatefulWidget {
 
 
 class _ProductCreateScreenState extends State<ProductCreateScreen> {
+
+  Map<String, dynamic> formValues = {
+    "Img":"",
+    "ProductCode":"",
+    "ProductName":"",
+    "Qty":"",
+    "TotalPrice":"",
+    "UnitPrice":""
+  };
+
+  final TextEditingController _inputTitleController = TextEditingController();
+  final TextEditingController _productCodeController = TextEditingController();
+  final TextEditingController _productImageController = TextEditingController();
+  final TextEditingController _productQuantityController = TextEditingController();
+  final TextEditingController _productUnitPriceController = TextEditingController();
+
+  setInputMapValue(key, keyValue) {
+    setState(() {
+      formValues.update(key, (value) => keyValue);
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +49,14 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                   TextFormField(
                     decoration: appInputDecorationStyle("Product Title"),
                     onChanged: (value) {
-
+                      setInputMapValue("ProductName", value);
+                    },
+                    controller: _inputTitleController,
+                    validator: (value) {
+                      if(value!.isEmpty) {
+                        return "Please Enter the value";
+                      }
+                      return null;
                     },
                   ),
                   const SizedBox(height: 10,),
@@ -93,7 +123,8 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
 
                     },
                     child: successButtonChild("Add Product"),
-                  )
+                  ),
+
 
                 ],
               ),
