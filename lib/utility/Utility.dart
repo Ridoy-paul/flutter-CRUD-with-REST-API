@@ -1,7 +1,7 @@
 
-inputValidation(String value) {
+String? inputValidation(String? value) {
   if(value!.isEmpty) {
     return "Please Enter the value";
   }
-  return "";
+  return null;
 }
