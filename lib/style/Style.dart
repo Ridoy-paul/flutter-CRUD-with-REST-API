@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 const colorDeepOrange = Color.fromRGBO(231, 111, 81, 1.0);
 const colorGreen = Color.fromRGBO(42,157,143, 1);
 const colorBlack = Color.fromRGBO(45, 59, 66, 1);
-const colorAssBlack = Color.fromRGBO(149, 169, 194, 1.0);
+const colorAssBlack = Color.fromRGBO(200, 202, 208, 1.0);
 const colorWhite = Color.fromRGBO(255, 255, 255, 1.0);
 
 // for background image
@@ -57,5 +55,17 @@ DecoratedBox dropDownStyle(child) {
         borderRadius: const BorderRadius.all(Radius.circular(10),),
       ),
     child: child,
+  );
+}
+
+// Button Style
+ButtonStyle buttonStyle() {
+  return ElevatedButton.styleFrom(
+    elevation: 1,
+    padding: const EdgeInsets.all(0),
+    backgroundColor: Colors.transparent,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
   );
 }
