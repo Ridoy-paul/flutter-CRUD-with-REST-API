@@ -31,13 +31,11 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
 
   final GlobalKey<FormState> _addFormKey = GlobalKey<FormState>();
 
-
   setInputMapValue(key, keyValue) {
     setState(() {
       formValues.update(key, (value) => keyValue);
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +63,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                     TextFormField(
                       decoration: appInputDecorationStyle("Product code"),
                       onChanged: (value) {
-
+                        setInputMapValue("ProductCode", value);
                       },
                       controller: _productCodeController,
                       validator: inputValidation,
@@ -74,7 +72,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                     TextFormField(
                       decoration: appInputDecorationStyle("Product Image"),
                       onChanged: (value) {
-
+                        setInputMapValue("Img", value);
                       },
                       controller: _productImageController,
                       validator: inputValidation,
@@ -83,7 +81,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                       height: 10,
                     ),
                     dropDownStyle(
-                      DropdownButton(
+                      DropdownButtonFormField(
                         value: "",
                         items: const  [
                           DropdownMenuItem(value: '', child:  Text("Select Quantity"),),
@@ -98,10 +96,11 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                           DropdownMenuItem(value: '9', child:  Text("9 pcs"),),
                         ],
                         onChanged: (value) {
-
+                          setInputMapValue("Qty", value);
                         },
+                        validator: inputValidation,
                         isExpanded: true,
-                        underline: Container(),
+                        //underline: Container(),
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                       ),
                     ),
@@ -110,7 +109,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                       keyboardType: TextInputType.number,
                       decoration: appInputDecorationStyle("Product Unit Price"),
                       onChanged: (value) {
-
+                        setInputMapValue("UnitPrice", value);
                       },
                       controller: _productUnitPriceController,
                       validator: inputValidation,
@@ -120,8 +119,7 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                       keyboardType: TextInputType.number,
                       decoration: appInputDecorationStyle("Product Total Price"),
                       onChanged: (value) {
-
-
+                        setInputMapValue("TotalPrice", value);
                       },
                       controller: _productTotalPriceController,
                     ),
@@ -135,7 +133,6 @@ class _ProductCreateScreenState extends State<ProductCreateScreen> {
                       },
                       child: successButtonChild("Add Product"),
                     ),
-
 
                   ],
                 ),
